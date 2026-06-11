@@ -1,0 +1,269 @@
+{
+  "project": "StartupPilot AI Audit",
+  "branchName": "ralph/audit",
+  "description": "Perform a complete audit of StartupPilot AI and determine whether the system actually works as advertised. Trust only observed behavior, do not trust documentation/implementation claims.",
+  "instructions": "Your task is NOT to add features. Your task is NOT to improve architecture. Your task is NOT to refactor code unless a defect is proven. Treat the project as if it were handed to you by another engineering team. Trust only observed behavior. Do not trust documentation. Do not trust implementation claims. Do not trust test names. Only trust execution results.",
+  "userStories": [
+    {
+      "id": "US-001",
+      "title": "Phase 1 - Environment Validation",
+      "description": "Verify: Python version compatibility, dependency installation, virtual environment setup, environment variable handling, configuration loading.",
+      "acceptanceCriteria": [
+        "Record PASS, FAIL, or WARNING for Python version compatibility",
+        "Record PASS, FAIL, or WARNING for Dependency installation",
+        "Record PASS, FAIL, or WARNING for Virtual environment setup",
+        "Record PASS, FAIL, or WARNING for Environment variable handling",
+        "Record PASS, FAIL, or WARNING for Configuration loading"
+      ],
+      "priority": 1,
+      "passes": false,
+      "notes": ""
+    },
+    {
+      "id": "US-002",
+      "title": "Phase 2 - Codebase Health Audit",
+      "description": "Analyze: folder structure, imports, circular dependencies, dead code, unused modules, duplicate logic, configuration consistency.",
+      "acceptanceCriteria": [
+        "Identify critical codebase health issues",
+        "Identify medium codebase health issues",
+        "Identify low codebase health issues"
+      ],
+      "priority": 2,
+      "passes": false,
+      "notes": ""
+    },
+    {
+      "id": "US-003",
+      "title": "Phase 3 - Startup Validation",
+      "description": "Verify Backend startup, Frontend startup, and Docker startup. Run start.py, backend/main.py, and frontend/app.py.",
+      "acceptanceCriteria": [
+        "Verify they start successfully",
+        "Verify no startup exceptions, hidden failures, or hanging processes"
+      ],
+      "priority": 3,
+      "passes": false,
+      "notes": ""
+    },
+    {
+      "id": "US-004",
+      "title": "Phase 4 - API Validation",
+      "description": "Test every API endpoint (/health, /agents, /analyze, /upload, /status/{id}, /report/{id}, /wiki/{id}, /research/{id}).",
+      "acceptanceCriteria": [
+        "Test with valid requests, invalid requests, malformed requests, missing data, and timeout handling",
+        "Record status code, latency, response schema, and errors for each endpoint"
+      ],
+      "priority": 4,
+      "passes": false,
+      "notes": ""
+    },
+    {
+      "id": "US-005",
+      "title": "Phase 5 - End-to-End Workflow Validation",
+      "description": "Run demo-healthcare and verify the entire workflow (User Input -> Research -> Market Analysis -> Competitor Analysis -> SWOT -> Business Strategy -> Human Approval -> Research Planner -> Knowledge Navigation -> Evidence Collection -> AutoGen Discussion -> Architecture Design -> Cost Analysis -> Report Generation).",
+      "acceptanceCriteria": [
+        "For every step, verify it was executed, produced output, updated state, and persisted results"
+      ],
+      "priority": 5,
+      "passes": false,
+      "notes": ""
+    },
+    {
+      "id": "US-006",
+      "title": "Phase 6 - LangGraph Validation",
+      "description": "Verify LangGraph orchestration in detail.",
+      "acceptanceCriteria": [
+        "Verify graph compilation",
+        "Verify node execution and state transitions",
+        "Verify checkpoint handling and retry logic",
+        "Verify conditional routing",
+        "Inspect actual execution traces"
+      ],
+      "priority": 6,
+      "passes": false,
+      "notes": ""
+    },
+    {
+      "id": "US-007",
+      "title": "Phase 7 - CrewAI Validation",
+      "description": "Verify CrewAI agent orchestration in detail.",
+      "acceptanceCriteria": [
+        "Verify agent creation",
+        "Verify task execution and agent coordination",
+        "Verify output generation",
+        "Confirm agents actually execute rather than being stubbed"
+      ],
+      "priority": 7,
+      "passes": false,
+      "notes": ""
+    },
+    {
+      "id": "US-008",
+      "title": "Phase 8 - AutoGen Validation",
+      "description": "Verify AutoGen autonomous discussion integration.",
+      "acceptanceCriteria": [
+        "Verify discussion generation and multi-agent conversations",
+        "Verify consensus generation",
+        "Verify transcript storage",
+        "Confirm AutoGen is truly used and not simulated"
+      ],
+      "priority": 8,
+      "passes": false,
+      "notes": ""
+    },
+    {
+      "id": "US-009",
+      "title": "Phase 9 - Knowledge Wiki Validation",
+      "description": "Upload real documents and verify Knowledge Wiki behaviors.",
+      "acceptanceCriteria": [
+        "Verify compilation and topic creation",
+        "Verify entity extraction and backlink creation",
+        "Verify page persistence",
+        "Inspect generated wiki files to confirm correct contents"
+      ],
+      "priority": 9,
+      "passes": false,
+      "notes": ""
+    },
+    {
+      "id": "US-010",
+      "title": "Phase 10 - Research Platform Validation",
+      "description": "Verify Research Planner, Multi-Hop Navigation, Evidence Collection, Research Traces, and Research Memory.",
+      "acceptanceCriteria": [
+        "Create task and generate plan",
+        "Navigate and collect evidence",
+        "Save memory",
+        "Verify actual behavior at each step"
+      ],
+      "priority": 10,
+      "passes": false,
+      "notes": ""
+    },
+    {
+      "id": "US-011",
+      "title": "Phase 11 - RAG / Context Engineering Validation",
+      "description": "Verify context engineering and retrieval behavior.",
+      "acceptanceCriteria": [
+        "Verify context assembly and retrieval logic",
+        "Verify wiki-first behavior and fallback retrieval",
+        "Verify token budgeting",
+        "Confirm context is assembled correctly"
+      ],
+      "priority": 11,
+      "passes": false,
+      "notes": ""
+    },
+    {
+      "id": "US-012",
+      "title": "Phase 12 - Human-in-the-Loop Validation",
+      "description": "Verify Human-in-the-Loop workflows.",
+      "acceptanceCriteria": [
+        "Verify Approve, Reject, and Modify options",
+        "Verify pausing and resuming the workflow",
+        "Confirm the workflow behaves correctly when interrupted"
+      ],
+      "priority": 12,
+      "passes": false,
+      "notes": ""
+    },
+    {
+      "id": "US-013",
+      "title": "Phase 13 - Frontend Validation",
+      "description": "Open every frontend page and test interface components.",
+      "acceptanceCriteria": [
+        "Test Home, Analysis, Agent Monitor, Discussion, Reports, Upload, Knowledge Wiki, and Research Explorer",
+        "Check rendering, responsiveness, websocket stability, CSS rendering, and navigation"
+      ],
+      "priority": 13,
+      "passes": false,
+      "notes": ""
+    },
+    {
+      "id": "US-014",
+      "title": "Phase 14 - Stress Testing",
+      "description": "Run multiple simultaneous analyses, uploads, and open multiple browser tabs.",
+      "acceptanceCriteria": [
+        "Verify memory stability and CPU stability",
+        "Verify no crashes or state corruption occur under load"
+      ],
+      "priority": 14,
+      "passes": false,
+      "notes": ""
+    },
+    {
+      "id": "US-015",
+      "title": "Phase 15 - Failure Testing",
+      "description": "Simulate and verify failure scenarios.",
+      "acceptanceCriteria": [
+        "Simulate backend offline, missing report, missing wiki, invalid project ID, invalid upload, and failed LLM call",
+        "Verify graceful error handling in all cases"
+      ],
+      "priority": 15,
+      "passes": false,
+      "notes": ""
+    },
+    {
+      "id": "US-016",
+      "title": "Phase 16 - Security Review",
+      "description": "Inspect codebase and behavior for security vulnerabilities.",
+      "acceptanceCriteria": [
+        "Inspect file uploads and prompt injection risks",
+        "Inspect API validation, path traversal risks, and secret handling",
+        "Identify specific vulnerabilities"
+      ],
+      "priority": 16,
+      "passes": false,
+      "notes": ""
+    },
+    {
+      "id": "US-017",
+      "title": "Phase 17 - Performance Review",
+      "description": "Measure and record performance metrics.",
+      "acceptanceCriteria": [
+        "Measure startup time, workflow latency, API latency, memory usage, and CPU usage",
+        "Identify specific bottlenecks"
+      ],
+      "priority": 17,
+      "passes": false,
+      "notes": ""
+    },
+    {
+      "id": "US-018",
+      "title": "Phase 18 - Deployment Review",
+      "description": "Verify deployment structures.",
+      "acceptanceCriteria": [
+        "Verify Docker and Docker Compose setup",
+        "Verify Environment Variables and Health Checks",
+        "Verify overall deployment reliability"
+      ],
+      "priority": 18,
+      "passes": false,
+      "notes": ""
+    },
+    {
+      "id": "US-019",
+      "title": "Phase 19 - Feature Claim Audit",
+      "description": "Audit advertised vs. implemented features.",
+      "acceptanceCriteria": [
+        "Create a table comparing Feature, Advertised, Implemented, Verified Working, and Evidence",
+        "Include LangGraph, CrewAI, AutoGen, Knowledge Wiki, Living Wiki, Research Planner, Multi-Hop Navigation, Research Memory, Human-in-the-Loop, Multi-LLM Routing, Report Generation, and Docker",
+        "Only mark as working if demonstrated with evidence"
+      ],
+      "priority": 19,
+      "passes": false,
+      "notes": ""
+    },
+    {
+      "id": "US-020",
+      "title": "Phase 20 - Final Engineering Report",
+      "description": "Compile the final engineering report detailing working/broken features and overall score.",
+      "acceptanceCriteria": [
+        "Produce lists for: Working Features, Partially Working Features, Broken Features, Missing Features, Runtime Issues, Security Issues, Reliability Issues, Performance Issues, Deployment Issues",
+        "Provide score out of 10 for: Architecture Score, Implementation Score, Reliability Score, Production Readiness Score",
+        "Explicitly answer: 'Does StartupPilot AI genuinely deliver the capabilities it claims to provide?' based on observed evidence"
+      ],
+      "priority": 20,
+      "passes": false,
+      "notes": ""
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+# Byte-compiled / optimized / DLL files
+**/__pycache__/
+*.py[cod]
+*$py.class
+
+# OS-specific files
+Thumbs.db
+Desktop.ini
+.DS_Store
+
+# Environments and Secrets
+.env
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# Caches and logs
+.pytest_cache/
+.kilocode/
+streamlit.log
+
+# Project Data Directories (automatically created by config.py on startup)
+data/
